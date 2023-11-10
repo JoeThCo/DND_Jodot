@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw7bdah8sjopf"]
+
+[ext_resource type="PackedScene" uid="uid://dmvuhqy2tp630" path="res://being.tscn" id="1_p82ke"]
+[ext_resource type="Script" path="res://player.gd" id="2_c215f"]
+
+[node name="Player" instance=ExtResource("1_p82ke")]
+script = ExtResource("2_c215f")
+
+[node name="Sprite2D" parent="." index="1"]
+modulate = Color(0, 1, 0, 1)
