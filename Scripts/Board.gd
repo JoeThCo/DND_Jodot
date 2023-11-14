@@ -5,7 +5,7 @@ const BOARD_SIZE: int = 8
 const OFFSET: float = float(BOARD_SIZE) * .5
 const BOTTOM_LEFT: Vector2i = Vector2i.ONE * -OFFSET
 
-const CELL_SIZE: int = 32
+const CELL_SIZE: int = 64
 
 const FLOOR_LAYER = 0
 const TILEMAP_ID = 0
@@ -21,12 +21,12 @@ func board_setup():
 
 func a_star_setup():
     a_star_grid = AStarGrid2D.new()
-    a_star_grid.region = Rect2i(BOTTOM_LEFT.x,BOTTOM_LEFT.y, BOARD_SIZE, BOARD_SIZE)
+    a_star_grid.region = Rect2i(-OFFSET, -OFFSET, BOARD_SIZE, BOARD_SIZE)
     a_star_grid.cell_size = Vector2i.ONE * CELL_SIZE
     a_star_grid.update()
     
 func get_a_star_path(unit: Unit) -> PackedVector2Array:
-    return a_star_grid.get_point_path(to_local(unit.position), get_local_mouse_position())
+    return a_star_grid.get_id_path(world_to_local(unit.position), mouse_to_local())
     
 func change_tile(coords: Vector2i, is_solid: bool):
     set_cell(FLOOR_LAYER, coords, TILEMAP_ID, Vector2i.ZERO)

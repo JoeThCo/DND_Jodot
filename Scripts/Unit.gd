@@ -12,6 +12,10 @@ func _ready() -> void:
     Move.init(5)
     Attack.init(3)
     
-func unit_setup(world: Vector2i, board: Board):
-    position = world
-    self.board = board
+func unit_setup(local: Vector2i, input_board: Board):
+    position = local
+    self.board = input_board
+    
+func _input(event: InputEvent) -> void:
+    if event is InputEventMouseButton and event.is_pressed():
+        Move.move_to_mouse()

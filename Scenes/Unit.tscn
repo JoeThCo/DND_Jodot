@@ -15,8 +15,14 @@ Attack = NodePath("Attack")
 [node name="Health" type="Node" parent="."]
 script = ExtResource("2_8v0d0")
 
-[node name="Move" type="Node" parent="."]
+[node name="Move" type="Node" parent="." node_paths=PackedStringArray("unit", "moveTimer")]
 script = ExtResource("4_5y65w")
+unit = NodePath("..")
+moveTimer = NodePath("MoveTimer")
+
+[node name="MoveTimer" type="Timer" parent="Move"]
+wait_time = 0.25
+one_shot = true
 
 [node name="Attack" type="Node" parent="."]
 script = ExtResource("3_0q64a")
