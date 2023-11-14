@@ -176,3 +176,5 @@ script = ExtResource("2_kxuyw")
 [node name="UnitSpawner" type="Node" parent="." node_paths=PackedStringArray("board")]
 script = ExtResource("3_t5lxx")
 board = NodePath("../Board")
+
+[connection signal="on_tile_change" from="Board" to="Board" method="_on_on_tile_change"]

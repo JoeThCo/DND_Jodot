@@ -19,3 +19,6 @@ func unit_setup(local: Vector2i, input_board: Board):
 func _input(event: InputEvent) -> void:
     if event is InputEventMouseButton and event.is_pressed():
         Move.move_to_mouse()
+        
+func get_local_position():
+    return board.world_to_local(position)

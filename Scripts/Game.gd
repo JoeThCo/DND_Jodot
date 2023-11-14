@@ -8,6 +8,7 @@ signal on_new_turn
 func _ready() -> void:
     game_setup()
     game_board.board_setup()
+    $Camera2D.position = game_board.get_camera_position()
 
 func game_setup():
     pass
