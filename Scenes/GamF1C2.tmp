@@ -161,17 +161,16 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_6h00g")
 
-[node name="Game" type="Node" node_paths=PackedStringArray("game_board")]
+[node name="Game" type="Node"]
 script = ExtResource("1_nvesw")
-game_board = NodePath("Board")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="UnitSpawner" type="Node" parent="." node_paths=PackedStringArray("board")]
+[node name="UnitSpawner" type="Node" parent="." node_paths=PackedStringArray("tile_map")]
 script = ExtResource("3_t5lxx")
-board = NodePath("../Board")
+tile_map = NodePath("../TileMap")
 
-[node name="Board" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ec768")
 format = 2
 layer_0/tile_data = PackedInt32Array(-65536, 0, 0, -1, 0, 0, 65534, 0, 0, 65535, 0, 0, 65536, 0, 0, 196607, 0, 0, 196606, 0, 0, 131070, 0, 0, -65535, 0, 0, -131070, 0, 0)

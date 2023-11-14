@@ -1,12 +1,17 @@
 extends Node
 
-@onready var unit: PackedScene = load('res://Scenes/Unit.tscn')
+var turn: int = 0
+signal on_new_turn
+
+@export var game_board: Board
 
 func _ready() -> void:
-    spawn_a_unit(Vector2i(0,0))
-    
-func spawn_a_unit(position: Vector2i):
-    var new_unit = unit.instantiate()
-    new_unit.position = $Board.local_to_world(Vector2i(0,0))
-    
-    add_child(new_unit)
+    game_setup()
+    game_board.board_setup()
+
+func game_setup():
+    pass
+
+func new_turn():
+    turn += 1
+    on_new_turn.emit()

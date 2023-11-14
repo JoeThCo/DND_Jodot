@@ -12,7 +12,6 @@ var maxHealth:int
 func init(start_health) -> void:
     health = start_health
     maxHealth = start_health
-    print_debug(health)
 
 #changes units health and calls signals
 func change_health(change: int):

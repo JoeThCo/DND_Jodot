@@ -6,19 +6,22 @@
 [ext_resource type="Script" path="res://Scripts/Move.gd" id="4_5y65w"]
 [ext_resource type="Texture2D" uid="uid://rd2pl58gmaxg" path="res://Art/Unit.png" id="5_4ltpn"]
 
-[node name="Unit" type="Node2D"]
+[node name="Unit" type="Node2D" node_paths=PackedStringArray("Health", "Move", "Attack")]
 script = ExtResource("1_kcur5")
+Health = NodePath("Health")
+Move = NodePath("Move")
+Attack = NodePath("Attack")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("2_8v0d0")
 
-[node name="Attack" type="Node" parent="."]
-script = ExtResource("3_0q64a")
-
 [node name="Move" type="Node" parent="."]
 script = ExtResource("4_5y65w")
 
+[node name="Attack" type="Node" parent="."]
+script = ExtResource("3_0q64a")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.521569, 1, 0.384314, 1)
-scale = Vector2(4, 4)
+scale = Vector2(3.5, 3.5)
 texture = ExtResource("5_4ltpn")
