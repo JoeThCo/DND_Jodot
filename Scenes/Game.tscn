@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvjuwo6eelwaq"]
+[gd_scene load_steps=6 format=3 uid="uid://dvjuwo6eelwaq"]
 
 [ext_resource type="Texture2D" uid="uid://cvnwqa1fen1ug" path="res://Art/tilesheet.png" id="1_k1mo6"]
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_nvesw"]
 [ext_resource type="Script" path="res://Scripts/Board.gd" id="2_kxuyw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lmsmy"]
@@ -160,6 +161,7 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_lmsmy")
 
 [node name="Game" type="Node"]
+script = ExtResource("1_nvesw")
 
 [node name="Board" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ipbs3")
